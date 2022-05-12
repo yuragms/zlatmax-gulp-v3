@@ -496,10 +496,25 @@ export function tabs() {
 Документация по работе в шаблоне: https://template.fls.guru/template-docs/menu-burger.html
 Сниппет (HTML): menu
 */
+// export function menuInit() {
+//   if (document.querySelector(".icon-menu")) {
+//     document.addEventListener("click", function (e) {
+//       if (bodyLockStatus && e.target.closest(".icon-menu")) {
+//         bodyLockToggle();
+//         document.documentElement.classList.toggle("menu-open");
+//         if (document.documentElement.classList.contains("catalog-open")) {
+//           document.documentElement.classList.remove("catalog-open");
+//         }
+//       }
+//     });
+//   }
+// }
+
 export function menuInit() {
-  if (document.querySelector(".icon-menu")) {
-    document.addEventListener("click", function (e) {
-      if (bodyLockStatus && e.target.closest(".icon-menu")) {
+  let iconMenu = document.querySelector(".icon-menu");
+  if (iconMenu) {
+    iconMenu.addEventListener("click", function (e) {
+      if (bodyLockStatus) {
         bodyLockToggle();
         document.documentElement.classList.toggle("menu-open");
         if (document.documentElement.classList.contains("catalog-open")) {
@@ -509,6 +524,7 @@ export function menuInit() {
     });
   }
 }
+
 export function menuOpen() {
   bodyLock();
   document.documentElement.classList.add("menu-open");

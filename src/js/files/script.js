@@ -42,8 +42,10 @@ function documentActions(e) {
 
   if (targetElement.closest(".menu-top-header__link_catalog")) {
     document.documentElement.classList.add("catalog-open");
+    console.log("три полоски");
     e.preventDefault();
   }
+
   if (targetElement.closest(".menu-catalog__back")) {
     document.documentElement.classList.remove("catalog-open");
     console.log("back");
