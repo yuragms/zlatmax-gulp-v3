@@ -30,8 +30,10 @@ function documentActions(e) {
       if (activeLink && activeLink !== targetElement) {
         activeLink.classList.remove("_sub-menu-active");
         activeBlock.classList.remove("_sub-menu-open");
+        document.documentElement.classList.remove("sub-menu-open");
       }
 
+      document.documentElement.classList.toggle("sub-menu-open");
       targetElement.classList.toggle("_sub-menu-active");
       subMenu.classList.toggle("_sub-menu-open");
     } else {
@@ -63,5 +65,19 @@ function documentActions(e) {
       : null;
 
     e.preventDefault();
+  }
+  if (targetElement.closest(".sub-menu-catalog__back")) {
+    document.documentElement.classList.remove("sub-menu-open");
+    document.querySelector("._sub-menu-active")
+      ? document
+          .querySelector("._sub-menu-active")
+          .classList.remove("_sub-menu-active")
+      : null;
+
+    document.querySelector("._sub-menu-open")
+      ? document
+          .querySelector("._sub-menu-open")
+          .classList.remove("_sub-menu-open")
+      : null;
   }
 }

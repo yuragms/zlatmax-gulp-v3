@@ -558,12 +558,12 @@
 
   // .menu-catalog__sub-menu
 
-  // &__sub-menu {
-  //   width: 100%;
-  //   left: 0;
-  //   top: 100%;
-  //   background-color: $mainDarkColor;
-  // }
+  &__sub-menu {
+    width: 100%;
+    left: 0;
+    top: 100%;
+    background-color: $mainDarkColor;
+  }
 
   &__back {
     display: none;
@@ -581,36 +581,38 @@
   }
 }
 .sub-menu-catalog {
-  // @media (max-width: $tablet) {
-  //   position: fixed;
-  //   top: 0;
-  //   left: -100%;
-  //   width: 100%;
-  //   height: 100%;
-  //   overflow: auto;
-  //   background-color: $mainDarkColor;
-  //   padding: rem(25) rem(15) rem(50) rem(15);
-  //   transition: left 0.3s ease 0s;
-  //   .catalog-open & {
-  //     // left: 0;
-  //     // z-index: 6;
-  //   }
-  // }
+  @media (max-width: $tablet) {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: $mainDarkColor;
+    padding: rem(25) rem(15) rem(50) rem(15);
+    transition: left 0.3s ease 0s;
 
-  // &__back {
-  //   display: none;
-  //   @media (max-width: $tablet) {
-  //     display: inline-flex;
-  //     align-items: center;
-  //     @include adaptiveValue("font-size", 30, 20, 992, 320, 1);
-  //     &:not(:last-child) {
-  //       margin-bottom: em(65, 30);
-  //     }
-  //     &::before {
-  //       margin: 0px em(13, 30) 0px 0px;
-  //     }
-  //   }
-  // }
+    .sub-menu-open & {
+      display: block;
+      left: 0;
+      z-index: 6;
+    }
+  }
+  //sub-menu-catalog__back
+  &__back {
+    display: none;
+    @media (max-width: $tablet) {
+      display: inline-flex;
+      align-items: center;
+      @include adaptiveValue("font-size", 30, 20, 992, 320, 1);
+      &:not(:last-child) {
+        margin-bottom: em(65, 30);
+      }
+      &::before {
+        margin: 0px em(13, 30) 0px 0px;
+      }
+    }
+  }
   // .sub-menu-catalog__block
 
   &__block {
@@ -624,6 +626,9 @@
 
     &._sub-menu-open {
       display: grid;
+      @media (max-width: $tablet) {
+        display: block;
+      }
     }
   }
   // .sub-menu-catalog__container
@@ -638,11 +643,14 @@
     font-size: rem(16);
     line-height: math.div(20, 16);
     font-weight: 700;
-    padding: rem(30) rem(15) rem(30) 0;
+
     @media (any-hover: hover) {
       &:hover {
         text-decoration: underline;
       }
+    }
+    @media (min-width: $tablet) {
+      padding: rem(30) rem(15) rem(30) 0;
     }
   }
 
@@ -668,6 +676,13 @@
       }
     }
   }
+
+  // .sub-menu-catalog__link-category
+
+  &__link-category {
+    @include adaptiveValue("font-size", 30, 20, 992, 320, 1);
+  }
+
   // .sub-menu-catalog__footer
 
   &__footer {
