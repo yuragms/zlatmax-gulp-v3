@@ -19,6 +19,8 @@
   // .main-block__slider
 
   &__slider {
+    margin: 0px rem(-30);
+    padding: 0px rem(30);
   }
 
   // .main-block__swiper
@@ -39,6 +41,37 @@
   // .main-block__advantages-main
 
   &__advantages-main {
+  }
+
+  &__controll {
+  }
+}
+
+.controll-main-block {
+  display: flex;
+  align-items: center;
+  gap: rem(20);
+
+  // .controll-main-block_dotts
+  &__dotts {
+    .swiper-pagination-bullet {
+    }
+  }
+
+  // .controll-main-block__fraction
+
+  &__fraction {
+  }
+}
+.fraction-controll {
+  // .fraction-controll__current
+
+  &__current {
+  }
+
+  // .fraction-controll__all
+
+  &__all {
   }
 }
 
@@ -112,7 +145,7 @@
       border: 2px solid rgba(255, 255, 255, 0.5);
       border-radius: 50%;
       position: absolute;
-      bottom: 2%;
+      bottom: 3.5%;
       right: 0;
       transform: translate(percent(131, 423), 0px);
     }
@@ -130,6 +163,7 @@
     height: 100%;
     top: 0;
     left: 0;
+    z-index: 5;
   }
 
   // .media-main-block__tip
@@ -139,6 +173,12 @@
     height: rem(20);
     position: absolute;
     cursor: pointer;
+    transition: all 0.3s ease 0s;
+    @media (any-hover: hover) {
+      &:hover {
+        transform: rotate(-180deg);
+      }
+    }
     &::before,
     &::after {
       content: "";
@@ -172,16 +212,22 @@
     // .media-main-block__tip_1
 
     &_1 {
+      top: percent(186, 500);
+      left: percent(72, 447);
     }
 
     // .media-main-block__tip_2
 
     &_2 {
+      top: percent(57, 500);
+      right: percent(13, 447);
     }
 
     // .media-main-block__tip_3
 
     &_3 {
+      bottom: percent(115, 500);
+      right: percent(28, 447);
     }
   }
 }
