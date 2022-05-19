@@ -14,9 +14,12 @@
   &__body {
     display: grid;
     align-items: start;
-    grid-template-columns: 1fr percent(635, 1600);
+    row-gap: rem(40);
     &:not(:last-child) {
       @include adaptiveValue("margin-bottom", 43, 30);
+    }
+    @media (min-width: $tablet) {
+      grid-template-columns: 1fr percent(635, 1600);
     }
   }
 
@@ -142,7 +145,10 @@
 
   &__content {
     color: #fff;
-    padding: 0px rem(40) 0px 0px;
+
+    @media (min-width: $tablet) {
+      padding: 0px rem(40) 0px 0px;
+    }
     &:not(:last-child) {
       @include adaptiveValue("margin-bottom", 60, 30);
     }
@@ -153,6 +159,7 @@
   &__title {
     font-weight: 700;
     letter-spacing: 0.03em;
+    @include adaptiveValue("font-size", 36, 22, 992, 320, 1);
     font-size: rem(36);
     line-height: math.div(46, 36);
     &:not(:last-child) {
@@ -163,7 +170,7 @@
   // .slide-main-block__sub-title
 
   &__sub-title {
-    font-size: rem(36);
+    @include adaptiveValue("font-size", 36, 22, 992, 320, 1);
     line-height: math.div(46, 36);
     &:not(:last-child) {
       margin-bottom: em(30, 36);
@@ -174,13 +181,16 @@
 
   &__text {
     color: rgba(255, 255, 255, 0.7);
-    font-size: rem(20);
+    @include adaptiveValue("font-size", 20, 16, 992, 320, 1);
     line-height: math.div(30, 20);
   }
 
   // .slide-main-block__button
 
   &__button {
+    @media (max-width: $mobileSmall) {
+      width: 100%;
+    }
   }
 }
 
@@ -202,8 +212,8 @@
     position: relative;
     &::before {
       content: "";
-      width: 423px;
-      height: 423px;
+      width: percent(423, 449);
+      padding-bottom: percent(423, 449);
       border: 2px solid rgba(255, 255, 255, 0.5);
       border-radius: 50%;
       position: absolute;
@@ -297,20 +307,30 @@
 .advantages-main {
   display: grid;
   grid-template-columns: repeat(4, auto);
-  gap: rem(10);
+  gap: rem(20);
   justify-content: space-between;
+  @media (max-width: $tablet) {
+    row-gap: rem(30);
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+  }
+  @media (max-width: $mobile) {
+    grid-template-columns: repeat(1, 1fr);
+  }
   // .advantages-main__item
 
   &__item {
-    display: grid;
+    display: inline-grid;
     gap: rem(17);
     text-align: center;
     max-width: rem(290);
+    grid-template-rows: 77px auto;
   }
 
   // .advantages-main__icon
 
   &__icon {
+    align-self: center;
   }
 
   // .advantages-main__text
@@ -320,6 +340,84 @@
     font-weight: 600;
     font-size: rem(20);
     line-height: math.div(32, 20);
+  }
+}
+
+//====================================================================================================
+
+.catalog-cards {
+  // .catalog-cards__container
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(rem(280), 1fr));
+  }
+
+  // .catalog-cards__item
+
+  &__item {
+  }
+}
+.item-catalog-cards {
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+  position: relative;
+  padding: rem(30);
+  // .item-catalog-cards__body
+
+  &__body {
+    position: relative;
+    z-index: 2;
+  }
+
+  // .item-catalog-cards__title
+
+  &__title {
+  }
+
+  // .item-catalog-cards__link-title
+
+  &__link-title {
+    font-weight: 600;
+    font-size: rem(24);
+    line-height: math.div(34, 24);
+    display: inline-block;
+    &::after {
+      content: "";
+      width: rem(70);
+      height: rem(2);
+      display: block;
+      margin: rem(15) 0px 0px 0px;
+      background-color: $mainOrange;
+      transition: width 0.3s ease 0s;
+    }
+    @media (any-hover: hover) {
+      &:hover {
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  // .item-catalog-cards__list
+
+  &__list {
+  }
+
+  // .item-catalog-cards__item
+
+  &__item {
+  }
+
+  // .item-catalog-cards__image
+
+  &__image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    text-align: right;
   }
 }
 
