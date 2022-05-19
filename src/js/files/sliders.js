@@ -7,7 +7,7 @@
 // Подключаем слайдер Swiper из node_modules
 // При необходимости подключаем дополнительные модули слайдера, указывая их в {} через запятую
 // Пример: { Navigation, Autoplay }
-import Swiper, { Navigation, Pagination, Parallax } from "swiper";
+import Swiper, { Navigation, Pagination, Parallax, Autoplay } from "swiper";
 /*
 Основниые модули слайдера:
 Navigation, Pagination, Autoplay, 
@@ -55,7 +55,7 @@ function initSliders() {
       // Указываем скласс нужного слайдера
       // Подключаем модули слайдера
       // для конкретного случая
-      modules: [Navigation, Pagination, Parallax],
+      modules: [Navigation, Pagination, Parallax, Autoplay],
       observer: true,
       observeParents: true,
       slidesPerView: 1,
@@ -66,18 +66,16 @@ function initSliders() {
 
       //touchRatio: 0,
       //simulateTouch: false,
-      //loop: true,
+      loop: true,
       //preloadImages: false,
       //lazy: true,
 
-      /*
-			// Эффекты
-			effect: 'fade',
-			autoplay: {
-				delay: 3000,
-				disableOnInteraction: false,
-			},
-			*/
+      // Эффекты
+      // effect: 'fade',
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
 
       // Пагинация
 
@@ -123,7 +121,31 @@ function initSliders() {
 			},
 			*/
       // События
-      on: {},
+      on: {
+        init: function (swiper) {
+          const allSlides = document.querySelector(".fraction-controll__all");
+          const allSlidesItems = document.querySelectorAll(
+            ".slide-main-block:not(.swiper-slide-duplicate)"
+          );
+          const currentSlide = document.querySelector(
+            ".fraction-controll__current"
+          );
+          allSlides.innerHTML =
+            allSlidesItems.length < 10
+              ? `0${allSlidesItems.length}`
+              : allSlidesItems.length;
+        },
+        slideChange: function (swiper) {
+          const currentSlide = document.querySelector(
+            ".fraction-controll__current"
+          );
+          currentSlide.innerHTML =
+            swiper.realIndex + 1 < 10
+              ? `0${swiper.realIndex + 1}`
+              : swiper.realIndex + 1;
+          console.log(swiper);
+        },
+      },
     });
   }
 }
