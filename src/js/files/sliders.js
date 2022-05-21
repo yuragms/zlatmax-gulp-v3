@@ -182,6 +182,7 @@ function initSliders() {
       pagination: {
         el: ".products-slider__dotts",
         clickable: true,
+        dynamicBullets: true,
       },
 
       // Скроллбар
@@ -221,7 +222,9 @@ function initSliders() {
       },
 
       // События
-      on: {},
+      on: {
+        init: function (swiper) {},
+      },
     });
   }
 }
