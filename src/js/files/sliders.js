@@ -204,8 +204,7 @@ function initSliders() {
       breakpoints: {
         320: {
           slidesPerView: 1,
-          spaceBetween: 0,
-          autoHeight: true,
+          spaceBetween: 10,
         },
         768: {
           slidesPerView: 2,
@@ -217,6 +216,84 @@ function initSliders() {
         },
         1370: {
           slidesPerView: 4,
+          spaceBetween: 30,
+        },
+      },
+
+      // События
+      on: {
+        init: function (swiper) {},
+      },
+    });
+  }
+  if (document.querySelector(".products-new")) {
+    // Указываем скласс нужного слайдера
+    // Создаем слайдер
+    new Swiper(".products-new__slider", {
+      // Указываем скласс нужного слайдера
+      // Подключаем модули слайдера
+      // для конкретного случая
+      modules: [Navigation, Pagination, Autoplay],
+      observer: true,
+      watchOverflow: true,
+      observeParents: true,
+      slidesPerView: 3,
+      spaceBetween: 30,
+      parallax: true,
+      //   autoHeight: true,
+      speed: 800,
+
+      //touchRatio: 0,
+      //simulateTouch: false,
+      // loop: true,
+      //preloadImages: false,
+      //lazy: true,
+
+      // Эффекты
+      // effect: 'fade',
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      // Пагинация
+
+      pagination: {
+        el: ".products-new__dotts",
+        clickable: true,
+        dynamicBullets: true,
+      },
+
+      // Скроллбар
+      /*
+			scrollbar: {
+				el: '.swiper-scrollbar',
+				draggable: true,
+			},
+			*/
+
+      // Кнопки "влево/вправо"
+      //   navigation: {
+      //     prevEl: ".swiper-button-prev",
+      //     nextEl: ".swiper-button-next",
+      //   },
+
+      // Брейкпоинты
+
+      breakpoints: {
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 10,
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        992: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        1330: {
+          slidesPerView: 3,
           spaceBetween: 30,
         },
       },
