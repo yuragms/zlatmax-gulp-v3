@@ -483,6 +483,9 @@
 .hits-products {
   @include adaptiveValue("padding-top", 50, 40);
   @include adaptiveValue("padding-bottom", 120, 40);
+  &_no-top {
+    padding-top: 0;
+  }
 }
 .sale-products {
   @include adaptiveValue("padding-top", 120, 40);
@@ -490,4 +493,56 @@
 }
 .sale-products_no-bottom {
   padding-bottom: 0;
+  &_no-bottom {
+    padding-bottom: 0;
+  }
+}
+//========================================================================================================================================================
+.articles-module {
+  @include adaptiveValue("padding-bottom", 120, 40);
+  // .articles-module__container
+
+  &__container {
+  }
+
+  // .articles-module__title
+
+  &__title {
+  }
+
+  // .articles-module__items
+
+  &__items {
+  }
+
+  // .articles-module__item
+
+  &__item {
+  }
+}
+.item-article {
+  // .item-article__image-ibg
+
+  &__image-ibg {
+  }
+
+  // .item-article__body
+
+  &__body {
+  }
+
+  // .item-article__title
+
+  &__title {
+  }
+
+  // .item-article__link-title
+
+  &__link-title {
+  }
+
+  // .item-article__date
+
+  &__date {
+  }
 }
