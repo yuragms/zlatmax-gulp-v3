@@ -1,5 +1,6 @@
 //====================================================================================================
 .footer {
+  background-color: $mainDarkColor;
   // .footer__text
 
   &__text {
@@ -16,8 +17,8 @@
   }
 }
 .text-footer {
-    @include adaptiveValue("margin-top", 60 , 40);
-    @include adaptiveValue("margin-bottom", 60 , 40);
+  @include adaptiveValue("padding-top", 60, 40);
+  @include adaptiveValue("padding-bottom", 60, 40);
   background: url("@img/footer/bgfooter.jpg") top/ cover no-repeat;
   // .text-footer__container
 
@@ -29,7 +30,8 @@
   &__title {
     text-align: center;
     font-weight: bold;
-    font-size: rem(30);
+    color: $mainOrange;
+    @include adaptiveValue("font-size", 30, 24);
     line-height: math.div(46, 30);
     &:not(:last-child) {
       margin-bottom: em(30, 30);
@@ -40,11 +42,66 @@
 
   &__text {
     color: #fff;
-    font-size: rem(18);
+    @include adaptiveValue("font-size", 18, 16);
     line-height: math.div(27, 18);
   }
 }
+
 .body-footer {
+  // .body-footer__row
+
+  &__row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(rem(400), 1fr));
+    gap: rem(20);
+  }
+
+  // .body-footer__item
+
+  &__item {
+  }
+}
+.item-footer {
+  // .item-footer__spoller
+
+  &__spoller {
+  }
+}
+.spoller-item-footer {
+  // .spoller-item-footer__item
+
+  &__item {
+  }
+
+  // .spoller-item-footer__title
+
+  &__title {
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 600;
+    line-height: math.div(22, 18);
+  }
+
+  // .spoller-item-footer__body
+
+  &__body {
+  }
+}
+.menu-footer {
+  // .menu-footer__list
+
+  &__list {
+  }
+
+  // .menu-footer__item
+
+  &__item {
+  }
+
+  // .menu-footer__link
+
+  &__link {
+  }
 }
 
 //====================================================================================================
