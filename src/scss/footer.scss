@@ -120,6 +120,7 @@
   // .spoller-item-footer__text
 
   &__text {
+    max-width: rem(320);
     line-height: math.div(27, 18);
     color: #fff;
     a {
@@ -170,5 +171,80 @@
     }
   }
 }
+.social-footer {
+  display: flex;
+  gap: rem(24);
+  // .social-footer__item
+
+  &__item {
+  }
+
+  // .social-footer__link
+
+  &__link {
+  }
+}
 
 //====================================================================================================
+
+.footer-subscribe {
+  // .footer-subscribe__label
+
+  &__label {
+    line-height: math.div(22, 18);
+    display: block;
+    color: #fff;
+    &:not(:last-child) {
+      margin-bottom: em(10, 18);
+    }
+  }
+
+  // .footer-subscribe__line
+
+  &__line {
+    display: flex;
+
+    position: relative;
+    .form__error {
+      position: absolute;
+      bottom: -15px;
+      font-size: rem(10);
+      color: red;
+    }
+  }
+
+  // .footer-subscribe__input
+
+  &__input {
+    background: rgba(255, 255, 255, 0.05);
+    height: rem(48);
+    padding: 0px rem(20);
+    color: #fff;
+    width: 100%;
+    border-radius: rem(3) 0 0 rem(3);
+    border: 1px solid #fff;
+    border-right: none;
+  }
+
+  // .footer-subscribe__button
+
+  &__button {
+    border-radius: 0 rem(3) rem(3) 0;
+    flex: 0 0 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $mainOrange;
+    &::before {
+      color: #fff;
+      font-size: rem(8);
+      transform: rotate(-90deg);
+    }
+  }
+}
+// . {
+//   // ._icon-spoller-arrow
+
+//   &_icon-footer-arrow {
+//   }
+// }
