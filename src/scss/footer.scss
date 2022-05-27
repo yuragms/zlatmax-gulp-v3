@@ -116,6 +116,21 @@
     @include adaptiveValue("padding-top", 30, 15);
     @include adaptiveValue("padding-bottom", 30, 20);
   }
+
+  // .spoller-item-footer__text
+
+  &__text {
+    line-height: math.div(27, 18);
+    color: #fff;
+    a {
+      color: $mainOrange;
+      @media (any-hover: hover) {
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
 }
 .menu-footer {
   // .menu-footer__list
@@ -126,10 +141,15 @@
   // .menu-footer__item
 
   &__item {
-    display: inline-flex;
+    line-height: 1.5;
+    display: flex;
     color: #fff;
     &:not(:last-child) {
       margin-bottom: em(20, 18);
+    }
+    &::before {
+      font-size: rem(18);
+      margin: em(5, 15) em(10, 15) 0px 0px;
     }
   }
 
@@ -139,6 +159,15 @@
     display: inline-flex;
     line-height: math.div(27, 18);
     color: rgba(255, 255, 255, 0.8);
+    &::before {
+      font-size: rem(20);
+      margin: em(5, 15) em(10, 15) 0px 0px;
+    }
+    &._icon-footer-email {
+      &::before {
+        font-size: rem(13);
+      }
+    }
   }
 }
 
