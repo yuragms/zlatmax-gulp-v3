@@ -49,9 +49,9 @@
 
 .body-footer {
   @include adaptiveValue("padding-top", 100, 40);
-  @include adaptiveValue("padding-bottom", 60, 40);
+  @include adaptiveValue("padding-bottom", 50, 40);
   display: grid;
-  @include adaptiveValue("gap", 35, 15);
+  @include adaptiveValue("gap", 35, 25);
   // .body-footer__row
 
   &__row {
@@ -91,6 +91,9 @@
   // .body-footer__copy
 
   &__copy {
+    span {
+      white-space: nowrap;
+    }
   }
 }
 .item-footer {
