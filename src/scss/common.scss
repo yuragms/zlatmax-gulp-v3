@@ -417,13 +417,11 @@
 .breadcrumbs {
   white-space: nowrap;
   overflow: auto;
+  height: rem(22);
   // .breadcrumbs__list
 
   &__list {
     display: flex;
-    &:not(:last-child) {
-      margin-bottom: rem(30);
-    }
   }
 
   // .breadcrumbs__item

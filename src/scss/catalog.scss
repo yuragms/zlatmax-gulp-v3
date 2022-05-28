@@ -4,8 +4,32 @@
   &__container {
   }
 
-  // .catalog__title
+  // .catalog__body
 
-  &__title {
+  &__body {
+    display: grid;
+    grid-template-columns: rem(375) 1fr;
+  }
+
+  // .catalog__filter
+
+  &__filter {
+  }
+
+  // .catalog__content
+
+  &__content {
+  }
+
+  // .catalog__control
+
+  &__control {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  // .catalog__products
+
+  &__products {
   }
 }
