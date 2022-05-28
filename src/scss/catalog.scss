@@ -9,6 +9,7 @@
   &__body {
     display: grid;
     grid-template-columns: rem(375) 1fr;
+    gap: rem(30);
   }
 
   // .catalog__filter
@@ -26,10 +27,16 @@
   &__control {
     display: flex;
     justify-content: flex-end;
+    &:not(:last-child) {
+      margin-bottom: rem(20);
+    }
   }
 
   // .catalog__products
 
   &__products {
+    display: grid;
+    gap: rem(30);
+    grid-template-columns: repeat(auto-fill, minmax(rem(290), rem(375)));
   }
 }
