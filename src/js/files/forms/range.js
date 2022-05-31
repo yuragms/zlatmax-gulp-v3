@@ -15,6 +15,7 @@ export function rangeInit() {
       const fromValue = rangeItem.querySelector("[data-range-from]");
       const toValue = rangeItem.querySelector("[data-range-to]");
       const item = rangeItem.querySelector("[data-range-item]");
+      const inputs = [fromValue, toValue];
       console.log("111");
       noUiSlider.create(item, {
         start: [Number(fromValue.value), Number(toValue.value)], // [0,200000]
@@ -24,6 +25,16 @@ export function rangeInit() {
           min: [Number(fromValue.dataset.rangeFrom)],
           max: [Number(toValue.dataset.rangeTo)],
         },
+      });
+      item.noUiSlider.on("update", function (values, handle) {
+        inputs[handle].value = values[handle];
+      });
+
+      // Listen to keydown events on the input field.
+      inputs.forEach(function (input, handle) {
+        input.addEventListener("change", function () {
+          item.noUiSlider.setHandle(handle, this.value);
+        });
       });
     });
   }

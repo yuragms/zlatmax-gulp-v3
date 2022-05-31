@@ -9,8 +9,12 @@
 
   &__body {
     display: grid;
-    grid-template-columns: rem(375) 1fr;
+    align-items: start;
+
     gap: rem(30);
+    @media (min-width: $tablet) {
+      grid-template-columns: rem(375) 1fr;
+    }
   }
 
   // .catalog__filter
@@ -38,7 +42,7 @@
   &__products {
     display: grid;
     gap: rem(30);
-    grid-template-columns: repeat(auto-fill, minmax(rem(290), rem(375)));
+    grid-template-columns: repeat(auto-fit, minmax(rem(290), 1fr));
     &:not(:last-child) {
       @include adaptiveValue("margin-bottom", 60, 30);
     }
@@ -49,6 +53,9 @@
     display: flex;
     justify-content: space-between;
     gap: rem(20);
+    @media (max-width: $tablet) {
+      flex-direction: column;
+    }
   }
 
   // .catalog__more
@@ -69,6 +76,7 @@
   // .filter-catalog__title
 
   &__title {
+    width: 100%;
     background-color: $mainDarkColor;
     font-weight: bold;
     font-size: rem(20);
@@ -80,6 +88,12 @@
   // .filter-catalog__items
 
   &__items {
+    @media (max-width: $tablet) {
+      display: none;
+      &._active {
+        display: block;
+      }
+    }
   }
 
   // .filter-catalog__price
@@ -125,7 +139,7 @@
     border-radius: rem(3);
     overflow: hidden;
     &:not(:last-child) {
-      margin-bottom: rem(30);
+      margin-bottom: rem(60);
     }
   }
 
@@ -144,5 +158,44 @@
   // .price-filter__range
 
   &__range {
+  }
+}
+
+.item-filter-catalog {
+  // .item-filter-catalog__title
+
+  &__title {
+    background-color: $mainDarkColor;
+    width: 100%;
+    color: #fff;
+    padding: rem(13) rem(30);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row-reverse;
+    &::before {
+      color: $mainOrange;
+      font-size: rem(8);
+      transform: rotate(-180deg);
+      transition: transform 0.3s ease 0s;
+    }
+    &._spoller-active {
+      &::before {
+        transform: rotate(0deg);
+      }
+    }
+  }
+
+  // .item-filter-catalog__body
+
+  &__body {
+    padding: rem(30);
+  }
+  // .item-filter-catalog__checkbox
+
+  &__checkbox {
+    &:not(:last-child) {
+      margin-bottom: rem(22);
+    }
   }
 }
