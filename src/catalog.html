@@ -26,7 +26,7 @@
             <div class="catalog__body">
               <div class="catalog__filter filter-catalog">
                 <div class="filter-catalog__title">Фильтр товаров</div>
-                <div data-spollers class="filter-catalog__items">
+                <div data-spollers class="filter-catalog__items _spoller-init">
                   <div class="filter-catalog__price price-filter">
                     <button
                       type="button"
@@ -38,16 +38,18 @@
                     <div data-range class="price-filter__body">
                       <div class="price-filter__inputs">
                         <input
-                          data-range__from
+                          data-range-from="0"
                           autocomplete="off"
                           type="text"
+                          value="500"
                           name="form[]"
                           class="price-filter__input"
                         />
                         <input
-                          data-range__to
+                          data-range-to="5000"
                           autocomplete="off"
                           type="text"
+                          value="1000"
                           name="form[]"
                           class="price-filter__input"
                         />
