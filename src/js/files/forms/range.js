@@ -396,13 +396,13 @@ export function rangeInit() {
       const fromValue = rangeItem.querySelector("[data-range-from]");
       const toValue = rangeItem.querySelector("[data-range-to]");
       const item = rangeItem.querySelector("[data-range-item]");
-      const noPrice = item.classList.contains("yyy-filter__range");
+      const yesPrice = item.classList.contains("price-filter__range");
 
       const inputs = [fromValue, toValue];
       console.log(item);
-      console.log(noPrice);
+      console.log(yesPrice);
 
-      if (noPrice) {
+      if (yesPrice) {
         noUiSlider.create(item, {
           start: [Number(fromValue.value), Number(toValue.value)], // [0,200000]
           connect: true,
@@ -414,7 +414,7 @@ export function rangeInit() {
           format: wNumb({
             decimals: 0,
             thousand: ".",
-            suffix: " (US $)",
+            suffix: " руб.",
           }),
         });
       } else {

@@ -103,7 +103,7 @@
 }
 
 .price-filter {
-  padding: rem(30);
+  padding: rem(30) rem(30) rem(50) rem(30);
   // .price-filter__title
 
   &__title {
@@ -159,6 +159,9 @@
 
   &__range {
   }
+  &__range-size {
+    // padding-bottom: 20px;
+  }
 }
 
 .item-filter-catalog {
@@ -190,7 +193,11 @@
 
   &__body {
     padding: rem(30);
+    .price-filter__range-size {
+      margin-bottom: rem(20);
+    }
   }
+
   // .item-filter-catalog__checkbox
 
   &__checkbox {

@@ -142,6 +142,13 @@
     top: rem(3);
     left: rem(3);
   }
+  .noUi-tooltip {
+    font-size: rem(14);
+    line-height: math.div(17, 14);
+    text-align: left;
+    border: none;
+    color: rgba(20, 20, 20, 0.5);
+  }
 }
 .noUi-active {
   // box-shadow: inset 0 0 1px #fff, inset 0 1px 7px #ddd, 0 3px 6px -3px #bbb;
@@ -286,7 +293,8 @@
 .noUi-horizontal .noUi-tooltip {
   transform: translate(-50%, 0);
   left: 50%;
-  bottom: 120%;
+  // bottom: 120%;
+  top: 120%;
 }
 .noUi-vertical .noUi-tooltip {
   transform: translate(0, -50%);

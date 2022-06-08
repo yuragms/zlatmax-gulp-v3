@@ -51,4 +51,14 @@
       color: $mainOrange;
     }
   }
+  // .checkbox__star-items
+  &__star-items {
+    display: flex;
+    gap: rem(10);
+    color: red;
+  }
+  &__star-item {
+    color: $mainOrange;
+    font-weight: 30px;
+  }
 }
