@@ -262,6 +262,8 @@
     color: rgba(20, 20, 20, 0.5);
     position: relative;
     &._tab-active {
+      font-weight: 700;
+      color: rgba(20, 20, 20, 1);
       &::after {
         content: "";
         position: absolute;
@@ -283,5 +285,18 @@
   // .product-info__body
 
   &__body {
+    color: rgba(20, 20, 20, 1);
+    &_1 {
+      // font-weight: 600;
+      font-size: rem(18);
+      line-height: math.div(27, 18);
+    }
+    &_2 {
+      display: flex;
+      .body-2__item {
+        width: 33%;
+        border: solid 1px blue;
+      }
+    }
   }
 }
