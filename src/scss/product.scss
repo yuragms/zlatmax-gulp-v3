@@ -292,10 +292,25 @@
       line-height: math.div(27, 18);
     }
     &_2 {
-      display: flex;
-      .body-2__item {
-        width: 33%;
-        border: solid 1px blue;
+      .body-2__items {
+        display: flex;
+        .body-2__item {
+          padding: rem(30) rem(30) rem(30) rem(30);
+          width: 33%;
+          border: solid 1px blue;
+          h1 {
+            font-weight: 700;
+            line-height: math.div(22, 18);
+            padding: 0 0 rem(30) 0;
+          }
+          .item-grid {
+            display: grid;
+            gap: rem(20);
+            @media (min-width: $tablet) {
+              grid-template-columns: 1fr 1fr;
+            }
+          }
+        }
       }
     }
   }
