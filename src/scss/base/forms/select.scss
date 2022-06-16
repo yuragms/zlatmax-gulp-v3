@@ -146,6 +146,19 @@
       }
     }
   }
+
+  &_stal {
+    .select__value {
+      height: rem(40);
+      color: rgba(0, 0, 0, 0.5);
+      &::after {
+        @extend %ic;
+        content: "\e900";
+        font-size: rem(8);
+        margin-left: em(10, 8);
+      }
+    }
+  }
 }
 
 // Тег
