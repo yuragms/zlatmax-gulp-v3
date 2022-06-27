@@ -431,6 +431,9 @@
   white-space: nowrap;
   overflow: auto;
   height: rem(22);
+  @media (max-width: $mobileSmall) {
+    display: none;
+  }
   // .breadcrumbs__list
 
   &__list {
@@ -469,6 +472,11 @@
   line-height: math.div(29, 24);
   &:not(:last-child) {
     margin-bottom: em(25, 24);
+  }
+  @media (max-width: $mobileSmall) {
+    font-weight: 500;
+    color: rgba(127, 127, 127, 1);
+    @include adaptiveValue("font-size", 23, 14);
   }
 }
 //========================================================================================================================================================

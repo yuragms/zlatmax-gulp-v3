@@ -164,7 +164,8 @@ body {
   // .page__header
 
   &__header {
-    margin-bottom: rem(30);
+    // margin-bottom: rem(30);
+    @include adaptiveValue("margin-bottom", 30, 15);
   }
 
   // .page__main-block

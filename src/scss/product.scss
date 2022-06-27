@@ -82,6 +82,10 @@
   &__header {
     border-bottom: 1px solid rgba(20, 20, 20, 0.15);
     padding: 0px 0px rem(30) 0px;
+    @media (max-width: $mobileSmall) {
+      border-top: 1px solid rgba(20, 20, 20, 0.15);
+      padding: rem(15) 0px rem(15) 0px;
+    }
   }
 
   // .body-product__table
@@ -284,7 +288,16 @@
   // .actions-product__quantity
 
   &__quantity {
+    @media (max-width: $mobileSmall) {
+      width: rem(120);
+      height: rem(40);
+    }
     .quantity__button {
+      @media (max-width: $mobileSmall) {
+        flex: 0 0 40px;
+        width: rem(40);
+        height: rem(40);
+      }
       &::before,
       &::after {
         background-color: rgba(255, 255, 255, 1);
@@ -334,22 +347,28 @@
 }
 
 .product-info {
+  @media (max-width: $mobileSmall) {
+    display: none;
+  }
   background: fefefe;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
   padding: rem(10) rem(30) 0 rem(30);
+  @media (max-width: $mobile) {
+    padding: rem(10) rem(15) 0 rem(15);
+  }
   // .product-info__navigation
 
   &__navigation {
     display: flex;
     justify-content: flex-start;
-    @include adaptiveValue("gap", 60, 30);
+    @include adaptiveValue("gap", 60, 10);
     border-bottom: 1px solid rgba(20, 20, 20, 0.15);
   }
 
   // .product-info__title
 
   &__title {
-    font-size: rem(20);
+    @include adaptiveValue("font-size", 20, 16);
     padding: rem(20) 0;
     line-height: math.div(24, 20);
     color: rgba(20, 20, 20, 0.5);
@@ -394,18 +413,32 @@
         .body-2__item {
           padding: rem(30) rem(30) rem(30) rem(30);
           width: 33%;
+          @media (max-width: $mobile) {
+            padding: rem(15) rem(15) rem(15) rem(15);
+          }
+
+          &:first-child {
+            padding: rem(30) rem(30) rem(30) 0;
+            @media (max-width: $mobile) {
+              padding: rem(15) rem(15) rem(15) 0;
+            }
+          }
 
           &:not(:last-child) {
             border-right: solid 1px rgba(20, 20, 20, 0.15);
           }
           h1 {
             font-weight: 700;
+            @include adaptiveValue("font-size", 18, 14);
             line-height: math.div(22, 18);
             padding: 0 0 rem(30) 0;
           }
           .item-grid {
             display: grid;
             gap: rem(20);
+            @media (max-width: $mobile) {
+              font-size: rem(16);
+            }
             @media (min-width: $tablet) {
               grid-template-columns: auto 1fr;
             }
