@@ -185,11 +185,13 @@
   // .table-product__label
 
   &__label {
+    @include adaptiveValue("font-size", 18, 14);
   }
 
   // .table-product__value
 
   &__value {
+    @include adaptiveValue("font-size", 18, 14);
     color: rgba(20, 20, 20, 0.5);
   }
   @media (min-width: $tablet) {
@@ -205,12 +207,15 @@
   // .options-product__label
 
   &__label {
+    @include adaptiveValue("font-size", 18, 14);
     align-self: center;
   }
 
   // .options-product__value
 
   &__value {
+    font-size: rem(14);
+    line-height: math.div(17, 14);
   }
 }
 .actions-product {
