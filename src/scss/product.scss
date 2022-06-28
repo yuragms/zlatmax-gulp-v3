@@ -456,4 +456,53 @@
       }
     }
   }
+  // .product-info__list
+  &__list {
+    @media (min-width: $mobileSmall) {
+      display: none;
+    }
+  }
+  // .product-info__item
+
+  &__item {
+    // background-color: rgba(20, 20, 20, 1);
+    // color: rgba(255, 255, 255, 1);
+    margin-bottom: rem(10);
+    border-radius: 3px;
+  }
+}
+.item-spoler {
+  // .item-spoler__title
+
+  &__title {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    align-items: center;
+    width: 100%;
+
+    background-color: rgba(20, 20, 20, 1);
+    color: rgba(255, 255, 255, 1);
+
+    padding: rem(11) rem(18);
+
+    @include adaptiveValue("font-size", 16, 14, 480, 320);
+    line-height: math.div(17, 14);
+
+    &::before {
+      font-size: rem(8);
+      transform: rotate(0deg);
+      transition: transform 0.3s ease 0s;
+    }
+    &._spoller-active {
+      &::before {
+        transform: rotate(-180deg);
+      }
+    }
+  }
+
+  // .item-spoler__body
+
+  &__body {
+  }
 }
