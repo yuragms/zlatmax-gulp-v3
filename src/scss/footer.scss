@@ -31,7 +31,7 @@
     text-align: center;
     font-weight: bold;
     color: $mainOrange;
-    @include adaptiveValue("font-size", 30, 24);
+    @include adaptiveValue("font-size", 30, 20);
     line-height: math.div(46, 30);
     &:not(:last-child) {
       margin-bottom: em(30, 30);

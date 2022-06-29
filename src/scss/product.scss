@@ -398,7 +398,7 @@
 
   &__body {
     color: rgba(20, 20, 20, 1);
-    font-size: rem(18);
+    @include adaptiveValue("font-size", 18, 16);
     line-height: math.div(22, 18);
     &_1 {
       // font-weight: 600;
@@ -410,9 +410,15 @@
     &_2 {
       .body-2__items {
         display: flex;
+        @media (max-width: $mobileSmall) {
+          flex-direction: column;
+        }
         .body-2__item {
           padding: rem(30) rem(30) rem(30) rem(30);
           width: 33%;
+          @media (max-width: $mobileSmall) {
+            width: 100%;
+          }
           @media (max-width: $mobile) {
             padding: rem(15) rem(15) rem(15) rem(15);
           }
@@ -422,10 +428,18 @@
             @media (max-width: $mobile) {
               padding: rem(15) rem(15) rem(15) 0;
             }
+            @media (max-width: $mobileSmall) {
+              padding: rem(15) rem(15) rem(15) rem(15);
+            }
           }
 
           &:not(:last-child) {
-            border-right: solid 1px rgba(20, 20, 20, 0.15);
+            @media (min-width: $mobileSmall) {
+              border-right: solid 1px rgba(20, 20, 20, 0.15);
+            }
+            @media (max-width: $mobileSmall) {
+              border-bottom: solid 1px rgba(20, 20, 20, 0.15);
+            }
           }
           h1 {
             font-weight: 700;
@@ -442,6 +456,9 @@
             @media (min-width: $tablet) {
               grid-template-columns: auto 1fr;
             }
+            @media (max-width: $mobileSmall) {
+              grid-template-columns: auto 1fr;
+            }
           }
         }
       }
@@ -454,6 +471,15 @@
         gap: rem(20);
         padding: rem(30) 0 rem(30) 0;
       }
+    }
+    &_4 .options-product__label {
+      color: rgba(20, 20, 20, 1);
+      @include adaptiveValue("font-size", 18, 16);
+      line-height: math.div(22, 18);
+      font-weight: 600;
+    }
+    &_4 .options-product {
+      grid-template-columns: 12.5rem minmax(200px, 300px);
     }
   }
   // .product-info__list
@@ -503,6 +529,10 @@
 
   // .item-spoler__body
 
-  &__body {
+  &__body .options-product__label {
+    color: rgba(20, 20, 20, 1);
+    @include adaptiveValue("font-size", 18, 16);
+    line-height: math.div(22, 18);
+    font-weight: 600;
   }
 }
