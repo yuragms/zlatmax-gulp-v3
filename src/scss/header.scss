@@ -184,6 +184,7 @@
     @extend ._icon-logo;
     font-size: rem(42);
     color: $mainDarkColor;
+    @include adaptiveValue("margin-right", 40, 10);
   }
 
   // .body-header__search

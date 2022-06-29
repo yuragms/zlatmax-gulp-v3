@@ -487,6 +487,14 @@
             </div>
           </div>
         </div>
+        <section class="page__sale-products sale-products">
+          @@include('html/_products-slider.htm',{ "title":"Похожие товары",
+          "moretext":"Перейти в похожие товары"})
+        </section>
+        <section class="page__hits-products hits-products">
+          @@include('html/_products-slider.htm',{ "title":"Рекомендуем",
+          "moretext":"Перейти в рекомендуем"})
+        </section>
       </main>
       @@include('html/_footer.htm',{})
     </div>
